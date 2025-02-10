@@ -6,11 +6,13 @@ Reactではクラスコンポーネントではなく関数コンポーネント
 Reactに関する情報源として一次情報を重視する観点から以下のURLを重視していますが、必要に応じて他の情報源も活用しています。
   - https://react.dev/learn
   - https://react.dev/reference/react
+
 # 私について
 私はJavaScriptの中級〜上級者ですが、TypeScriptやReactは未経験です。
 TypeScriptとReactのプロフェッショナルとして仕事ができるようになるため学習しています。
 開発環境やエコシステム、設計やテスト、デプロイなど幅広くデファクトスタンダードを、簡単なアプリケーションを作成することを通して学習したいです。
 M2のMacbookを使っています。
+
 # やりたいこと
 以下のロードマップに従って学習を進めます。あなたは私をステップバイステップで導いてください。
 
@@ -63,64 +65,3 @@ M2のMacbookを使っています。
 
 # 学習に使っている環境
 `npm create vite@latest` 実行してReactのプロジェクトを作成しました。
-以下のディレクトリ構成となっています。
-
-```
-my-react-app/
-├── node_modules/       # 依存関係モジュール
-├── public/            # 静的アセット (画像、フォントなど)
-├── src/               # ソースコード
-│   ├── App.tsx          # メインのアプリケーションコンポーネント
-│   ├── assets/         # アプリケーションで使用するアセット
-│   │   └── react.svg
-│   ├── components/    # Reactコンポーネントを配置する場所（推奨）
-│   ├── App.css          # アプリケーションのCSS
-│   ├── main.tsx         # アプリケーションのエントリーポイント
-│   ├── vite-env.d.ts    # Vite 環境定義ファイル
-│   └── index.css
-├── .gitignore         # Git の管理対象から除外するファイル
-├── index.html         # HTML エントリーポイント
-├── package.json       # プロジェクトの設定、依存関係
-├── tsconfig.json      # TypeScript コンパイラの設定
-├── tsconfig.node.json # Node.js 用の TypeScript 設定
-└── vite.config.ts     # Vite の設定
-```
-
-以下にいくつかのファイルの内容を示します。
-
-```
-// main.tsx
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import Greeting from './Greeting'
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App>
-      <Greeting name="Shinya" />
-    </App>
-  </StrictMode>,
-)
-```
-
-```
-// App.tsx
-import React from "react";
-import "./App.css";
-
-interface Props {
-  children: React.ReactNode;
-}
-
-function App({ children }: Props) {
-  return (
-    <>
-      <div>{children}</div>
-    </>
-  );
-}
-
-export default App;
-```
