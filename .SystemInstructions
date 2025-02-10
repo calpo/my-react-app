@@ -65,3 +65,6 @@ M2のMacbookを使っています。
 
 # 学習に使っている環境
 `npm create vite@latest` 実行してReactのプロジェクトを作成しました。
+
+学習に利用しているソースコードは以下にあるため、以下リポジトリを参照してください。
+https://github.com/calpo/my-react-app/tree/main
