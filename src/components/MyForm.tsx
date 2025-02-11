@@ -1,28 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
+import { useUser } from "../contexts/UserContext";
 
 interface Props {
-  name: string;
+  placeholder: string;
 }
 
 const MyForm: React.FC<Props> = (props: Props) => {
-  const [name, setName] = useState(props.name);
+  let nameInput = "";
+
+  const { name, setName } = useUser();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
     console.log(event.target.value);
+    nameInput = event.target.value;
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert(`Form Submitted. name is ${name}.`);
+    setName(nameInput);
   };
 
   return (
     <>
+      <div>NameContext: {name}</div>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
-          <input type="text" value={name} onChange={handleChange} />
+          <input
+            type="text"
+            onChange={handleChange}
+            placeholder={props.placeholder}
+          />
         </label>
         <button type="submit">Submit</button>
       </form>

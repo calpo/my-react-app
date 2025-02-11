@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { UserProvider } from "./contexts/UserContext";
 
 interface Props {
   children: React.ReactNode;
@@ -9,9 +10,11 @@ interface Props {
 function App({ children }: Props) {
   return (
     <>
-      <ThemeProvider>
-        <div>{children}</div>
-      </ThemeProvider>
+      <UserProvider>
+        <ThemeProvider>
+          <div>{children}</div>
+        </ThemeProvider>
+      </UserProvider>
     </>
   );
 }

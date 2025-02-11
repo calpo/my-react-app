@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../contexts/ThemeContext";
+import { useUser } from "../contexts/UserContext";
 
-interface Props {
-  name: string;
-}
-
-const Greeting: React.FC<Props> = ({ name }) => {
+const Greeting: React.FC = () => {
   const [message, setMessage] = useState<string>("Hello");
   const { theme, toggleTheme } = useTheme();
+  const { name } = useUser();
 
   useEffect(() => {
     console.log(`hi ${name}, component mounted.`);

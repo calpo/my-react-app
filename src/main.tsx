@@ -8,7 +8,7 @@ import MyForm from './components/MyForm.tsx'
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App>
-      <Greeting name="しんや" />
+      <Greeting />
       <MyForm name="enter your name" />
     </App>
   </StrictMode>
