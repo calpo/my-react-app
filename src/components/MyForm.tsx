@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useUser } from "../contexts/UserContext";
 
 interface Props {
@@ -6,13 +6,12 @@ interface Props {
 }
 
 const MyForm: React.FC<Props> = (props: Props) => {
-  let nameInput = "";
-
+  const [ nameInput, setNameInput ] = useState("");
   const { name, setName } = useUser();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log(event.target.value);
-    nameInput = event.target.value;
+    setNameInput(event.target.value);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -28,6 +27,7 @@ const MyForm: React.FC<Props> = (props: Props) => {
           Name:
           <input
             type="text"
+            value={nameInput}
             onChange={handleChange}
             placeholder={props.placeholder}
           />

@@ -9,7 +9,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App>
       <Greeting />
-      <MyForm name="enter your name" />
+      <MyForm placeholder='Enter your name' />
     </App>
   </StrictMode>
 );

@@ -32,6 +32,7 @@ const Greeting: React.FC = () => {
         }}
       >
         <h1>{message}</h1>
+        <div>UserContextに保存されているnameの値: {name} </div>
         <button onClick={handleClick}>挨拶する</button>
         <button onClick={toggleTheme}>Toggle Theme</button>
       </div>
