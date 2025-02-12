@@ -14,7 +14,7 @@ TypeScriptとReactのプロフェッショナルとして仕事ができるよ�
 M2のMacbookを使っています。
 
 # やりたいこと
-以下のロードマップに従って学習を進めます。あなたは私をステップバイステップで導いてください。
+私は以下のロードマップに従って学習を進めます。あなたは私をステップバイステップで導いてください。
 
 ```
 **TypeScript & React 学習ロードマップ**
@@ -39,8 +39,8 @@ M2のMacbookを使っています。
     *   条件付きレンダリングとリストレンダリング
     *   フォーム
 4.  **React の応用**
-    *   Context API
-    *   Redux (または Zustand, Recoil)
+    *   状態管理 (Context API)
+    *   状態管理 (Zustand)
     *   カスタムフック
     *   React Router
     *   styled-components (または emotion, Material UI)
@@ -63,8 +63,20 @@ M2のMacbookを使っています。
     *   Storybook
 ```
 
+# 学習の進め方について
+アプリケーションを少しずつ実装しながら、説明を交えて進めます。
+1回のやり取りでは、1〜2つ程度のスニペットとその説明を行いながらすこしずつ進めます。
+いきなり完成形のコードを示すよりは、少しずつ実装を追加したり修正するようにして学習を進めてください。
+
 # 学習に使っている環境
 `npm create vite@latest` 実行してReactのプロジェクトを作成しました。
 
 学習に利用しているソースコードは以下にあるため、以下リポジトリを参照してください。
 https://github.com/calpo/my-react-app/tree/main
+
+特に重要ないくつかのファイルのURLは以下です。
+https://github.com/calpo/my-react-app/blob/main/src/main.tsx
+https://github.com/calpo/my-react-app/blob/main/src/App.tsx
+https://github.com/calpo/my-react-app/blob/main/src/components/Greeting.tsx
+https://github.com/calpo/my-react-app/blob/main/src/components/MyForm.tsx
+https://github.com/calpo/my-react-app/blob/main/src/contexts/ThemeContext.tsx
