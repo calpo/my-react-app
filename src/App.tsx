@@ -29,6 +29,8 @@ function App({ children }: Props) {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/user/1">User 1</Link></li>
+              </ul>
+              <ul>
                 <li><Link to="/greeting">Greeting</Link></li>
                 <li><Link to="/my-form">My Form</Link></li>
                 <li><Link to="/zustand">Zustand Sample</Link></li>
