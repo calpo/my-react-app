@@ -4,10 +4,12 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { UserProvider } from "./contexts/UserContext";
 import useWindowSize from "./hooks/useWindowSize";
 import useLocalStorage from "./hooks/useLocalStorage";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import User from "./pages/User";
+import RedirectPage from "./pages/RedirectPage";
+import NotFound from "./pages/NotFound";
 
 interface Props {
   children: React.ReactNode;
@@ -41,6 +43,8 @@ function App({ children }: Props) {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/user/:id/*" element={<User />} />
+          <Route path="/redirect" element={<RedirectPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <UserProvider>
