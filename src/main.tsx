@@ -5,6 +5,8 @@ import App from './App.tsx'
 import Greeting from './components/Greeting.tsx'
 import MyForm from './components/MyForm.tsx'
 import ZustandSample from './components/ZustandSample.tsx';
+import WindowSize from './components/WindowSize.tsx'
+import PermanentUserName from './components/PermanentUserName.tsx'
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -12,6 +14,8 @@ createRoot(document.getElementById("root")!).render(
       <Greeting />
       <MyForm placeholder='Enter your name' />
       <ZustandSample /> 
+      <WindowSize />
+      <PermanentUserName />
     </App>
   </StrictMode>
 );

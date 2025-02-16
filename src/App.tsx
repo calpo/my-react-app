@@ -2,9 +2,7 @@ import React from "react";
 import "./App.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { UserProvider } from "./contexts/UserContext";
-import useWindowSize from "./hooks/useWindowSize";
-import useLocalStorage from "./hooks/useLocalStorage";
-import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import User from "./pages/User";
@@ -16,12 +14,6 @@ interface Props {
 }
 
 function App({ children }: Props) {
-  const windowSize = useWindowSize();
-  const [permanentName, setPermanentName] = useLocalStorage<string>(
-    "eternalName",
-    "永遠のしんや"
-  );
-
   return (
     <Router>
       <div>
@@ -50,18 +42,6 @@ function App({ children }: Props) {
         <UserProvider>
           <ThemeProvider>
             <div>{children}</div>
-            <div>
-              window size: {windowSize.width} x {windowSize.height}
-            </div>
-
-            <div>
-              <input
-                type="text"
-                value={permanentName}
-                onChange={(e) => setPermanentName(e.target.value)}
-              />
-              <p>おかえりなさい、{permanentName}さん</p>
-            </div>
           </ThemeProvider>
         </UserProvider>
       </div>
