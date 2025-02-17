@@ -13,6 +13,7 @@ import MyForm from "./components/MyForm";
 import ZustandSample from "./components/ZustandSample";
 import WindowSize from "./components/WindowSize";
 import PermanentUserName from "./components/PermanentUserName";
+import Greeting2 from "./components/Greeting2";
 
 interface Props {
   children: React.ReactNode;
@@ -32,6 +33,7 @@ function App({ children }: Props) {
               </ul>
               <ul>
                 <li><Link to="/greeting">Greeting</Link></li>
+                <li><Link to="/greeting2">Greeting2</Link></li>
                 <li><Link to="/my-form">My Form</Link></li>
                 <li><Link to="/zustand">Zustand Sample</Link></li>
                 <li><Link to="/window-size">Window Size</Link></li>
@@ -44,6 +46,7 @@ function App({ children }: Props) {
               <Route path="/about" element={<About />} />
               <Route path="/user/:id/*" element={<User />} />
               <Route path="/greeting" element={<Greeting />} />
+              <Route path="/greeting2" element={<Greeting2 name="お名前初期値" age={20} isAdult={true} status="success" />} />
               <Route path="/my-form" element={<MyForm placeholder='Enter your name' />} />
               <Route path="/zustand" element={<ZustandSample />} />
               <Route path="/window-size" element={<WindowSize />} />
