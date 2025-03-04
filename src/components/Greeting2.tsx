@@ -12,7 +12,11 @@ interface Props {
 const Greeting2: React.FC<Props> = ({ name, age, isAdult, message, status }) => {
   let statusMessage: string;
 
-  const StyledGreeting = styled.div<{ isAdult: boolean }>`
+  interface StyledGreetingProps {
+    isAdult: boolean;
+  }
+
+  const StyledGreeting = styled.div<StyledGreetingProps>`
     background-color: ${props => (props.isAdult ? '#ffcc80' : '#f0f0f0')};
     padding: 16px;
     border-radius: 8px;
