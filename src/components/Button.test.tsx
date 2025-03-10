@@ -15,4 +15,36 @@ describe('Button Component', () => {
     fireEvent.click(buttonElement);
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
+
+  test('指定したラベルを持つ', () => {
+    const handleClick = jest.fn();
+    render(<Button label="Click me" onClick={handleClick} />);
+    
+    const buttonElement = screen.getByText('Click me');
+    expect(buttonElement).toBeInTheDocument();
+  });
+
+  test('クリック時に指定した関数を呼び出す', () => {
+    const handleClick = jest.fn();
+    render(<Button label="Click me" onClick={handleClick} />);
+
+    const buttonElement = screen.getByText('Click me');
+
+    fireEvent.click(buttonElement);
+
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  test('無効なボタンはクリックできない', () => {
+    const handleClick = jest.fn();
+    render(<Button label="Click me" onClick={handleClick} disabled />);
+
+    const buttonElement = screen.getByText('Click me');
+
+    expect(buttonElement).toBeDisabled();
+
+    fireEvent.click(buttonElement);
+
+    expect(handleClick).not.toHaveBeenCalled();  
+  });
 });
