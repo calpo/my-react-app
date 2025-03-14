@@ -15,6 +15,7 @@ import WindowSize from "./components/WindowSize";
 import PermanentUserName from "./components/PermanentUserName";
 import Greeting2 from "./components/Greeting2";
 import SimpleForm from "./components/SimpleForm";
+import UserList from "./components/UserList";
 
 interface Props {
   children: React.ReactNode;
@@ -40,6 +41,7 @@ function App({ children }: Props) {
                 <li><Link to="/window-size">Window Size</Link></li>
                 <li><Link to="/permanent-username">Permanent Username</Link></li>
                 <li><Link to="/simple-form">Simple Form</Link></li>
+                <li><Link to="/user-list">User List</Link></li>
               </ul>
             </nav>
 
@@ -55,6 +57,7 @@ function App({ children }: Props) {
               <Route path="/permanent-username" element={<PermanentUserName />} />
               <Route path="/redirect" element={<RedirectPage />} />
               <Route path="/simple-form" element={<SimpleForm />} />
+              <Route path="/user-list" element={<UserList />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <div>{children}</div>
